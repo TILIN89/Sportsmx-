@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports MX</title>
+<style>
+  body {
+    background-color: #0c0c0c;
+    color: #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-weight: 900;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #141414;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    color: #aaa;
+    font-weight: 900;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+
+  .tab.active {
+    color: #fff;
+    border-bottom: none;
+  }
+
+  .matches {
+    display: none;
+    padding: 15px;
+  }
+
+  .matches.active {
+    display: block;
+  }
+
+  .liga-card {
+    background: #1a1a1a;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #222;
+  }
+
+  .liganombre {
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .divider {
+    height: 1px;
+    background: #2a2a2a;
+    margin: 10px 0 15px 0;
+  }
+
+/* === ESTILO DE LOS ENLACES DE PARTIDOS (con alineación corregida) === */
+.partido-link {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px 0;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.partido-link:hover {
+  background: #222;
+  border-radius: 6px;
+}
+
+.equipo-left,
+.equipo-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.equipo-left {
+  justify-content: flex-start;
+}
+
+.equipo-right {
+  justify-content: flex-end;
+}
+
+.central-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.logos-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logos-row img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.central-info {
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 4px 10px;
+  min-width: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 16px;
+  position: relative;
+  color: #fff;
+}
+  .live .central-info {
+    border-color: #ff574d;
+  }
+
+  .live-bar {
+    height: 3px;
+    background: #ff574d;
+    border-radius: 2px;
+    width: 30%;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: patrol 0.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes patrol {
+    0% {
+      transform: translateX(-50%) translateX(-15px);
+    }
+    100% {
+      transform: translateX(-50%) translateX(15px);
+    }
+  }
+
+  .tab-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1a1a1a;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .tab-menu button {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .tab-menu button.active {
+    color: #fff;
+  }
+
+  .tab-menu .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #ff574d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    width: 0;
+    left: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="tab-menu">
+  <button class="tab active" data-tab="ayer">Ayer</button>
+  <button class="tab" data-tab="hoy">Hoy</button>
+  <button class="tab" data-tab="mañana">Mañana</button>
+  <div class="indicator"></div>
+</div>
+
+<div id="ayer" class="matches active">
+  <div id="ayer-ligamx"></div>
+  <div id="ayer-laliga"></div>
+</div>
+
+<div id="hoy" class="matches">
+  <div id="hoy-ligamx"></div>
+  <div id="hoy-laliga"></div>
+</div>
+
+<div id="mañana" class="matches">
+  <div id="mañana-ligamx"></div>
+  <div id="mañana-laliga"></div>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const matches = document.querySelectorAll('.matches');
+const indicator = document.querySelector('.tab-menu .indicator');
+
+// ====== CONFIGURACIÓN DE TABS ======
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    matches.forEach(m => m.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+    moverIndicador(tab);
+  });
+});
+
+function moverIndicador(tab) {
+  const rect = tab.getBoundingClientRect();
+  const parentRect = tab.parentElement.getBoundingClientRect();
+  indicator.style.width = rect.width + 'px';
+  indicator.style.left = (rect.left - parentRect.left) + 'px';
+}
+
+// ====== FUNCIONES ======
+function formatoHoraLocal(fechaStr) {
+  if(!fechaStr) return '';
+  const fecha = new Date(fechaStr);
+  const horas = fecha.getHours().toString().padStart(2,'0');
+  const minutos = fecha.getMinutes().toString().padStart(2,'0');
+  return `${horas}:${minutos}`;
+}
+
+function obtenerFecha(offset = 0) {
+  const d = new Date();
+  d.setDate(d.getDate() + offset);
+  return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function crearPartidos(ligaNombre, bandera, data) {
+  const tarjeta = document.createElement('div');
+  tarjeta.className = 'liga-card';
+  tarjeta.innerHTML = `<div class="liganombre">${bandera} ${ligaNombre}</div><div class="divider"></div>`;
+
+  const defaultLogo = "https://upload.wikimedia.org/wikipedia/en/d/d3/AD_Ceuta_FC.png"; // logo neutral
+
+  data.events.forEach(event => {
+    const comp = event.competitions?.[0];
+    if(!comp || !comp.competitors || comp.competitors.length < 2) return;
+
+    const home = comp.competitors.find(c => c.homeAway === 'home');
+    const away = comp.competitors.find(c => c.homeAway === 'away');
+    const homeLogo = home.team?.logo ?? '';
+    const awayLogo = away.team?.logo ?? '';
+    const homeName = home.team?.shortDisplayName ?? home.team?.displayName;
+    const awayName = away.team?.shortDisplayName ?? away.team?.displayName;
+    const scoreHome = home.score ?? '';
+    const scoreAway = away.score ?? '';
+    const status = event.status?.type?.state ?? 'pre';
+    let display = '';
+
+    if (status === 'in') display = `${scoreHome}-${scoreAway} <div class="live-bar"></div>`;
+    else if (status === 'post') display = `${scoreHome}-${scoreAway}`;
+    else display = formatoHoraLocal(event.date);
+
+    // Crear un slug del nombre del partido
+    const slug = `${homeName}-vs-${awayName}`
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '') // elimina caracteres raros
+      .replace(/\s+/g, '-'); // espacios -> guiones
+
+    // Crear el enlace
+    const link = `/partidos/${slug}.html`;
+
+    const partido = document.createElement('div');
+    partido.className = `partido ${status === 'in' ? 'live' : ''}`;
+    partido.innerHTML = `
+      <a href="${link}" class="partido-link">
+        <div class="equipo-left"><span>${homeName}</span></div>
+        <div class="central-logos">
+          <div class="logos-row">
+            <img src="${homeLogo || defaultLogo}" alt="${homeName}">
+            <div class="central-info">${display}</div>
+            <img src="${awayLogo || defaultLogo}" alt="${awayName}">
+          </div>
+        </div>
+        <div class="equipo-right"><span>${awayName}</span></div>
+      </a>
+    `;
+    tarjeta.appendChild(partido);
+  });
+  return tarjeta;
+}
+
+async function cargarLigas(ligas, divId, offset) {
+  const div = document.getElementById(divId);
+  div.innerHTML = `<div class="liga-card"><div class="liganombre">Cargando partidos...</div></div>`;
+  const fecha = obtenerFecha(offset);
+  let hayPartidos = false;
+
+  div.innerHTML = '';
+
+  for (const liga of ligas) {
+    try {
+      // ⚠️ Proxy compatible con Neocities
+      const proxyUrl = "https://api.codetabs.com/v1/proxy/?quest=";
+      const url = `${liga.api}?dates=${fecha}`;
+      const res = await fetch(proxyUrl + encodeURIComponent(url));
+      const data = await res.json();
+
+      if (data.events && data.events.length > 0) {
+        hayPartidos = true;
+        div.appendChild(crearPartidos(liga.nombre, liga.bandera, data));
+      }
+    } catch (err) {
+      console.log(`Error al cargar ${liga.nombre}:`, err);
+    }
+  }
+
+  if (!hayPartidos) {
+    div.innerHTML = `<div class="liga-card"><div class="liganombre">⚽ No hay partidos para esta fecha</div></div>`;
+  }
+}
+
+// ====== CONFIGURAR TUS LIGAS ======
+const ligas = [
+  { api: 'https://site.api.espn.com/apis/site/v2/sports/soccer/mex.1/scoreboard', nombre: 'Liga MX', bandera: '🇲🇽' },
+  { api: 'https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard', nombre: 'LaLiga', bandera: '🇪🇸' },
+  { api: 'https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard', nombre: 'LaLiga 2', bandera: '🇪🇸' }
+];
+
+// ====== CARGA PRINCIPAL ======
+async function cargarTodo() {
+  await Promise.all([
+    cargarLigas(ligas, 'ayer-ligamx', -1),
+    cargarLigas(ligas, 'hoy-ligamx', 0),
+    cargarLigas(ligas, 'mañana-ligamx', 1)
+  ]);
+}
+
+// ====== AUTO HOY ======
+let refresher = null;
+window.addEventListener("DOMContentLoaded", async () => {
+  const hoyTab = document.querySelector('.tab[data-tab="hoy"]');
+  const hoyMatch = document.getElementById('hoy');
+  tabs.forEach(t => t.classList.remove('active'));
+  matches.forEach(m => m.classList.remove('active'));
+  if (hoyTab && hoyMatch) {
+    hoyTab.classList.add('active');
+    hoyMatch.classList.add('active');
+    moverIndicador(hoyTab);
+  }
+  await cargarTodo();
+  if (refresher) clearInterval(refresher);
+  refresher = setInterval(cargarTodo, 60000);
+});
+</script>
+</body>
+</html>
