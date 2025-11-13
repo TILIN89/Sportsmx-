@@ -1,0 +1,34 @@
+{
+  "liga": "Liga MX",
+  "jornada": 17,
+  "actualizado": "2025-11-12 18:00",
+  "partidos": [
+    {
+      "local": "América",
+      "visitante": "Pumas UNAM",
+      "marcador": "2-1",
+      "estado": "Finalizado",
+      "hora": "19:00",
+      "fecha": "2025-11-10",
+      "estadio": "Estadio Azteca"
+    },
+    {
+      "local": "Monterrey",
+      "visitante": "Tigres UANL",
+      "marcador": "1-1",
+      "estado": "En vivo 67’",
+      "hora": "21:00",
+      "fecha": "2025-11-12",
+      "estadio": "BBVA"
+    },
+    {
+      "local": "León",
+      "visitante": "Pachuca",
+      "marcador": "0-0",
+      "estado": "Pendiente",
+      "hora": "20:00",
+      "fecha": "2025-11-13",
+      "estadio": "Nou Camp"
+    }
+  ]
+}
