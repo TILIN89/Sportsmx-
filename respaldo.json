@@ -1,79 +1,158 @@
 {
-  "events": [
-    {
-      "date": "2025-11-12T22:00Z",
-      "status": {
-        "type": {
-          "state": "in",
-          "detail": "En Vivo 75'"
-        }
+  "ayer": {
+    "events": [
+      {
+        "date": "2025-11-12T02:00Z",
+        "status": {
+          "type": {
+            "state": "post",
+            "detail": "Finalizado"
+          }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "id": "233",
+                "type": "team",
+                "homeAway": "home",
+                "score": "2",
+                "team": {
+                  "displayName": "Chivas",
+                  "shortDisplayName": "CHI",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png"
+                }
+              },
+              {
+                "id": "240",
+                "type": "team",
+                "homeAway": "away",
+                "score": "1",
+                "team": {
+                  "displayName": "Pumas UNAM",
+                  "shortDisplayName": "PUM",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/240.png"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hoy": {
+    "events": [
+      {
+        "date": "2025-11-12T22:00Z",
+        "status": {
+          "type": {
+            "state": "in",
+            "detail": "En Vivo 75'"
+          }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "id": "229",
+                "type": "team",
+                "homeAway": "home",
+                "score": "1",
+                "team": {
+                  "displayName": "América",
+                  "shortDisplayName": "AME",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png"
+                }
+              },
+              {
+                "id": "230",
+                "type": "team",
+                "homeAway": "away",
+                "score": "2",
+                "team": {
+                  "displayName": "Cruz Azul",
+                  "shortDisplayName": "CAZ",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/230.png"
+                }
+              }
+            ]
+          }
+        ]
       },
-      "competitions": [
-        {
-          "competitors": [
-            {
-              "id": "229",
-              "type": "team",
-              "homeAway": "home",
-              "score": "1",
-              "team": {
-                "displayName": "América",
-                "shortDisplayName": "AME",
-                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png"
+      {
+        "date": "2025-11-13T01:30Z",
+        "status": {
+          "type": {
+            "state": "pre",
+            "detail": "8:30 PM CST"
+          }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "id": "241",
+                "type": "team",
+                "homeAway": "home",
+                "team": {
+                  "displayName": "Tigres UANL",
+                  "shortDisplayName": "TIG",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/241.png"
+                }
+              },
+              {
+                "id": "238",
+                "type": "team",
+                "homeAway": "away",
+                "team": {
+                  "displayName": "Rayados",
+                  "shortDisplayName": "RAY",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/238.png"
+                }
               }
-            },
-            {
-              "id": "230",
-              "type": "team",
-              "homeAway": "away",
-              "score": "2",
-              "team": {
-                "displayName": "Cruz Azul",
-                "shortDisplayName": "CAZ",
-                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/230.png"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "manana": {
+    "events": [
+      {
+        "date": "2025-11-13T18:00Z",
+        "status": {
+          "type": {
+            "state": "pre",
+            "detail": "12:00 PM CST"
+          }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "id": "231",
+                "type": "team",
+                "homeAway": "home",
+                "team": {
+                  "displayName": "Atlas",
+                  "shortDisplayName": "ATL",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/231.png"
+                }
+              },
+              {
+                "id": "232",
+                "type": "team",
+                "homeAway": "away",
+                "team": {
+                  "displayName": "León",
+                  "shortDisplayName": "LEO",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/232.png"
+                }
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2025-11-12T02:00Z",
-      "status": {
-        "type": {
-          "state": "post",
-          "detail": "Finalizado"
-        }
-      },
-      "competitions": [
-        {
-          "competitors": [
-            {
-              "id": "233",
-              "type": "team",
-              "homeAway": "home",
-              "score": "9:",
-              "team": {
-                "displayName": "Chivas",
-                "shortDisplayName": "CHI",
-                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png"
-              }
-            },
-            {
-              "id": "240",
-              "type": "team",
-              "homeAway": "away",
-              "score": "00",
-              "team": {
-                "displayName": "Pumas UNAM",
-                "shortDisplayName": "PUM",
-                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/240.png"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
-
