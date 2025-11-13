@@ -26,7 +26,7 @@
               "id": "230",
               "type": "team",
               "homeAway": "away",
-              "score": "1",
+              "score": "2",
               "team": {
                 "displayName": "Cruz Azul",
                 "shortDisplayName": "CAZ",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "date": "2025-11-11T02:00Z",
+      "date": "2025-11-12T02:00Z",
       "status": {
         "type": {
           "state": "post",
@@ -52,7 +52,7 @@
               "id": "233",
               "type": "team",
               "homeAway": "home",
-              "score": "2",
+              "score": "9:",
               "team": {
                 "displayName": "Chivas",
                 "shortDisplayName": "CHI",
@@ -63,7 +63,7 @@
               "id": "240",
               "type": "team",
               "homeAway": "away",
-              "score": "0",
+              "score": "00",
               "team": {
                 "displayName": "Pumas UNAM",
                 "shortDisplayName": "PUM",
@@ -76,3 +76,4 @@
     }
   ]
 }
+
