@@ -1,97 +1,78 @@
 {
-  "Liga MX": {
-    "events": [
-      {
-        "id": "1",
-        "date": "2025-11-10T19:00Z",
-        "status": {
-          "type": { "state": "post" }
-        },
-        "competitions": [
-          {
-            "competitors": [
-              {
-                "homeAway": "home",
-                "score": "2",
-                "team": {
-                  "displayName": "América",
-                  "shortDisplayName": "América",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/21/Club_America_crest.svg"
-                }
-              },
-              {
-                "homeAway": "away",
-                "score": "1",
-                "team": {
-                  "displayName": "Pumas UNAM",
-                  "shortDisplayName": "Pumas",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/2e/Club_Universidad_Nacional_logo.svg"
-                }
-              }
-            ]
-          }
-        ]
+  "events": [
+    {
+      "date": "2025-11-12T22:00Z",
+      "status": {
+        "type": {
+          "state": "in",
+          "detail": "En Vivo 75'"
+        }
       },
-      {
-        "id": "2",
-        "date": "2025-11-12T21:00Z",
-        "status": {
-          "type": { "state": "in" }
-        },
-        "competitions": [
-          {
-            "competitors": [
-              {
-                "homeAway": "home",
-                "score": "1",
-                "team": {
-                  "displayName": "Monterrey",
-                  "shortDisplayName": "Rayados",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/f/f6/C.F._Monterrey_logo.svg"
-                }
-              },
-              {
-                "homeAway": "away",
-                "score": "1",
-                "team": {
-                  "displayName": "Tigres UANL",
-                  "shortDisplayName": "Tigres",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/5/5e/Tigres_UANL_logo.svg"
-                }
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "229",
+              "type": "team",
+              "homeAway": "home",
+              "score": "1",
+              "team": {
+                "displayName": "América",
+                "shortDisplayName": "AME",
+                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/229.png"
               }
-            ]
-          }
-        ]
+            },
+            {
+              "id": "230",
+              "type": "team",
+              "homeAway": "away",
+              "score": "1",
+              "team": {
+                "displayName": "Cruz Azul",
+                "shortDisplayName": "CAZ",
+                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/230.png"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-11-11T02:00Z",
+      "status": {
+        "type": {
+          "state": "post",
+          "detail": "Finalizado"
+        }
       },
-      {
-        "id": "3",
-        "date": "2025-11-13T20:00Z",
-        "status": {
-          "type": { "state": "pre" }
-        },
-        "competitions": [
-          {
-            "competitors": [
-              {
-                "homeAway": "home",
-                "team": {
-                  "displayName": "León",
-                  "shortDisplayName": "León",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/2a/Club_Leon_logo.svg"
-                }
-              },
-              {
-                "homeAway": "away",
-                "team": {
-                  "displayName": "Pachuca",
-                  "shortDisplayName": "Pachuca",
-                  "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/Club_Pachuca_logo.svg"
-                }
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "233",
+              "type": "team",
+              "homeAway": "home",
+              "score": "2",
+              "team": {
+                "displayName": "Chivas",
+                "shortDisplayName": "CHI",
+                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/233.png"
               }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+            },
+            {
+              "id": "240",
+              "type": "team",
+              "homeAway": "away",
+              "score": "0",
+              "team": {
+                "displayName": "Pumas UNAM",
+                "shortDisplayName": "PUM",
+                "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/240.png"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
