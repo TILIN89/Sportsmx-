@@ -1,34 +1,97 @@
 {
-  "liga": "Liga MX",
-  "jornada": 17,
-  "actualizado": "2025-11-12 18:00",
-  "partidos": [
-    {
-      "local": "América",
-      "visitante": "Pumas UNAM",
-      "marcador": "2-1",
-      "estado": "Finalizado",
-      "hora": "19:00",
-      "fecha": "2025-11-10",
-      "estadio": "Estadio Azteca"
-    },
-    {
-      "local": "Monterrey",
-      "visitante": "Tigres UANL",
-      "marcador": "1-1",
-      "estado": "En vivo 67’",
-      "hora": "21:00",
-      "fecha": "2025-11-12",
-      "estadio": "BBVA"
-    },
-    {
-      "local": "León",
-      "visitante": "Pachuca",
-      "marcador": "0-0",
-      "estado": "Pendiente",
-      "hora": "20:00",
-      "fecha": "2025-11-13",
-      "estadio": "Nou Camp"
-    }
-  ]
+  "Liga MX": {
+    "events": [
+      {
+        "id": "1",
+        "date": "2025-11-10T19:00Z",
+        "status": {
+          "type": { "state": "post" }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "homeAway": "home",
+                "score": "2",
+                "team": {
+                  "displayName": "América",
+                  "shortDisplayName": "América",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/21/Club_America_crest.svg"
+                }
+              },
+              {
+                "homeAway": "away",
+                "score": "1",
+                "team": {
+                  "displayName": "Pumas UNAM",
+                  "shortDisplayName": "Pumas",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/2e/Club_Universidad_Nacional_logo.svg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "date": "2025-11-12T21:00Z",
+        "status": {
+          "type": { "state": "in" }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "homeAway": "home",
+                "score": "1",
+                "team": {
+                  "displayName": "Monterrey",
+                  "shortDisplayName": "Rayados",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/f/f6/C.F._Monterrey_logo.svg"
+                }
+              },
+              {
+                "homeAway": "away",
+                "score": "1",
+                "team": {
+                  "displayName": "Tigres UANL",
+                  "shortDisplayName": "Tigres",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/5/5e/Tigres_UANL_logo.svg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "date": "2025-11-13T20:00Z",
+        "status": {
+          "type": { "state": "pre" }
+        },
+        "competitions": [
+          {
+            "competitors": [
+              {
+                "homeAway": "home",
+                "team": {
+                  "displayName": "León",
+                  "shortDisplayName": "León",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/2/2a/Club_Leon_logo.svg"
+                }
+              },
+              {
+                "homeAway": "away",
+                "team": {
+                  "displayName": "Pachuca",
+                  "shortDisplayName": "Pachuca",
+                  "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/Club_Pachuca_logo.svg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
