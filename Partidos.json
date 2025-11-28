@@ -1,8 +1,53 @@
-4:20:07 PM: Post processing - 
-4:20:07 PM: Post processing done
-4:20:07 PM: Section completed: postprocessing
-4:20:07 PM: Starting post processing
-4:20:07 PM: Skipping form detection
-4:20:07 PM: Post processing - redirect rules
-4:20:08 PM: Site is live ✨
-
+{
+    "status": "PREVIO",
+    "minute": null,
+    "home_score": 0,
+    "away_score": 0,
+    "home_name": "Cruz Azul",
+    "home_logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Escudo_Cruz_Azul.svg/1200px-Escudo_Cruz_Azul.svg.png",
+    "away_name": "Club Am\u00e9rica",
+    "away_logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Club_Am%C3%A9rica_logo.svg/1200px-Club_Am%C3%A9rica_logo.svg.png",
+    "league_name": "Liga MX",
+    "round": "Final de Ida",
+    "stadium_name": "Estadio Ciudad de los Deportes",
+    "stadium_city": "CDMX",
+    "referee_name": "Marco Antonio Ortiz Nava",
+    "time_of_match": "20:00",
+    "day_of_match": "Jueves 23 de Mayo",
+    "events": [
+        {
+            "time": "12'",
+            "team": "home",
+            "type": "yellow_card",
+            "player": "Kevin Mier"
+        },
+        {
+            "time": "30'",
+            "team": "away",
+            "type": "yellow_card",
+            "player": "Jonathan Dos Santos"
+        },
+        {
+            "time": "36'",
+            "team": "home",
+            "type": "goal",
+            "player": "Uriel Antuna",
+            "score": "1:0"
+        },
+        {
+            "time": "45'+3",
+            "team": "away",
+            "type": "goal",
+            "player": "Juli\u00e1n Qui\u00f1ones",
+            "score": "1:1"
+        },
+        {
+            "time": "55'",
+            "team": "home",
+            "type": "substitution",
+            "player_out": "Lorenzo Faravelli",
+            "player_in": "Carlos Rodríguez",
+            "player": "Carlos Rodríguez"
+        }
+    ]
+}
