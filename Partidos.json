@@ -2,7 +2,7 @@
     "status": "En Vivo",
     "minute": 30,
     "home_score": 0,
-    "away_score": 0,
+    "away_score": 4,
     "home_name": "Cruz Azul",
     "home_logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Escudo_Cruz_Azul.svg/1200px-Escudo_Cruz_Azul.svg.png",
     "away_name": "Club Am\u00e9rica",
@@ -51,4 +51,5 @@
         }
     ]
 }
+
 
