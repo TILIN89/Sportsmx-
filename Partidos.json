@@ -1,6 +1,6 @@
 {
     "status": "En Vivo",
-    "minute": 30,
+    "minute": 31,
     "home_score": 0,
     "away_score": 4,
     "home_name": "Cruz Azul",
@@ -51,5 +51,6 @@
         }
     ]
 }
+
 
 
